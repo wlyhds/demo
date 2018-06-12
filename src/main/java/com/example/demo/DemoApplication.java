@@ -10,12 +10,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class DemoApplication {
 	
-	@RequestMapping("/")
+	@RequestMapping("/hello")
 	@ResponseBody
-	public Object index() {
+	public Object hello() {
 		return "hello world";
 	}
 	
+	@RequestMapping("/")
+	public String index() {
+	    return "index";
+	}
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
